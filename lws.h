@@ -1,3 +1,4 @@
+#include <openssl/ssl.h>
 #include <libwebsockets.h>
 
 //Some #define'd constants are unavailable in Swift; add them here to export them.
