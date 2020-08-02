@@ -6,7 +6,7 @@ let package = Package(
     name: "Clibwebsockets",
     products: [.library(name: "Clibwebsockets", targets: ["Clibwebsockets"])],
     dependencies: [
-        .package(url: "git://github.com/NobodyNada/COpenSSL", from: "0.0.0")
+        .package(url: "git://github.com/NobodyNada/COpenSSL", from: "0.1.0")
     ],
     targets: [
         .systemLibrary(
