@@ -1,11 +1,18 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.0
 
 import PackageDescription
 
 let package = Package(
     name: "Clibwebsockets",
-    pkgConfig: "libwebsockets",
+    products: [.library(name: "Clibwebsockets", targets: ["Clibwebsockets"])],
     dependencies: [
         .package(url: "git://github.com/NobodyNada/COpenSSL", from: "0.0.0")
+    ],
+    targets: [
+        .systemLibrary(
+            name: "Clibwebsockets",
+            pkgConfig: "libwebsockets",
+            providers: [.brew(["libwebsockets"]), .apt(["libwebsockets-dev"])]
+        )
     ]
 )
