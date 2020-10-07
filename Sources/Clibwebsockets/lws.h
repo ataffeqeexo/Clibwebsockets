@@ -1,5 +1,9 @@
 #include <openssl/ssl.h>
+
+#ifndef _WIN32
 #include <termios.h>
+#endif
+
 #include <libwebsockets.h>
 
 //Some #define'd constants are unavailable in Swift; add them here to export them.
