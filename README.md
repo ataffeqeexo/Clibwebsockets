@@ -4,11 +4,19 @@ A Swift system module for libwebsockets
 This is a system module that allows Swift Package Manager projects to use `libwebsockets`.  To use this module, you must download & install libwebsockets from https://github.com/warmcat/libwebsockets.
 
 ## macOS and Linux
-Swift packages using this module must be built with:
+The following packages must be present and marked as dependencies to allow Xcode and Swift Package manager to compile:
+```
+.package(url: "https://github.com/NobodyNada/Clibwebsockets.git", from: "1.3.0"),
+.package(url: "https://github.com/NobodyNada/COpenSSL.git", from: "0.1.0"),
+.package(url: "https://github.com/NobodyNada/Clibuv.git", from: "0.0.0"),
+.package(url: "https://github.com/NobodyNada/Clibevent.git", from: "0.0.0")
+```
+
+Alternatively, the following arguments can be used in place of the `COpenSSL`, `Clibuv`, and `Clibevent` dependencies (will only work from the command line, not Xcode):
 
     swift build -Xswiftc -lwebsockets -Xswiftc -I/usr/local/opt/openssl/include -Xswiftc -I/usr/local/include -Xswiftc -L/usr/local/lib -Xlinker -L/usr/local/lib -Xlinker -lwebsockets
 
-instead of just `swift build`.
+Please note that `swift build` will not work without `COpenSSL`, `Clibuv`, and `Clibevent` dependencies or the arguments above.
 
 ## Windows
 Swift must be installed according to the [Swift Getting Started](https://swift.org/getting-started/). To build libwebsockets, vcpkg is recommended. For example:
