@@ -13,8 +13,7 @@ let package = Package(
     targets: [
         .systemLibrary(
             name: "Clibwebsockets",
-            pkgConfig: "libwebsockets",
-            providers: [.brew(["libwebsockets"]), .apt(["libwebsockets-dev"])]
+            pkgConfig: "libwebsockets"
         )
     ]
 )
