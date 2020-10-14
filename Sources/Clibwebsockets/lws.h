@@ -4,7 +4,7 @@
 #include <termios.h>
 #endif
 
-#if os(macOS)
+#ifndef _WIN32
 #include "libwebsockets.h"
 #else
 #include <libwebsockets.h>
